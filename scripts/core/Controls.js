@@ -6,7 +6,7 @@
 
 var preloadBar = document.getElementById("loading_bar_connection");
 subscribe("/load",function(ratio){
-	ratio = ratio*ratio*ratio*ratio*ratio; // to make it look like it's accelerating.
+	ratio = Math.pow(ratio,5); // to make it look like it's accelerating.
 	preloadBar.style.left = Math.round(-225*(1-ratio))+"px";
 });
 
